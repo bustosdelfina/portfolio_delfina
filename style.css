@@ -1,0 +1,274 @@
+/* =====================================================
+   PALETA DE COLORES
+   Guardamos los colores en "variables" para cambiarlos
+   en un solo lugar y que se actualicen en toda la página.
+   Se usan escribiendo var(--nombre)
+   ===================================================== */
+:root {
+    --crema: #FFF7E6;      /* Vanilla Cream: fondo general de la página */
+    --rosa: #F7C8D3;       /* Blush Petal: fondos suaves y botones */
+    --palo-rosa: #B46A72;  /* Rosewood: títulos y detalles */
+    --salvia: #A8B58A;     /* Sage Leaf: etiquetas de habilidades */
+    --cielo: #A9B7C6;      /* Misty Sky: bordes y detalles fríos */
+    --noche: #2D3A47;      /* Midnight Lagoon: texto principal y portada */
+}
+
+/* =====================================================
+   ESTILOS GENERALES
+   ===================================================== */
+
+/* El asterisco (*) afecta a TODOS los elementos */
+* {
+    margin: 0;                  /* Quita los márgenes que el navegador pone por defecto */
+    padding: 0;                 /* Quita los rellenos por defecto */
+    box-sizing: border-box;     /* Hace que el ancho incluya el relleno y el borde (evita que se desborden las cajas) */
+}
+
+html {
+    scroll-behavior: smooth;    /* Al tocar el menú, la página se desplaza suavemente */
+}
+
+body {
+    background-color: var(--crema);                            /* Color de fondo de toda la página */
+    color: var(--noche);                                       /* Color del texto */
+    font-family: "Segoe UI", Helvetica, Arial, sans-serif;     /* Tipografía del texto (si no está la primera, usa la siguiente) */
+    font-size: 1.05rem;                                        /* Tamaño de letra base (rem = relativo al tamaño del navegador) */
+    line-height: 1.7;                                          /* Espacio entre renglones, para leer cómodo */
+}
+
+/* Títulos de sección (Perfil, Estudios, etc.) */
+h2 {
+    font-family: Georgia, "Times New Roman", serif;   /* Tipografía con serif, más elegante, para los títulos */
+    font-size: 2rem;                                  /* Tamaño del título */
+    color: var(--palo-rosa);                          /* Color rosewood */
+    margin-bottom: 1.2rem;                            /* Espacio debajo del título */
+}
+
+/* Subtítulos (nombre de carrera, de trabajo, etc.) */
+h3 {
+    font-size: 1.15rem;       /* Tamaño un poco más grande que el texto normal */
+    margin-bottom: 0.3rem;    /* Pequeño espacio debajo */
+}
+
+/* =====================================================
+   PORTADA (HEADER)
+   ===================================================== */
+#inicio {
+    background-color: var(--noche);   /* Fondo azul oscuro, para que la portada destaque */
+    color: var(--crema);              /* Texto claro sobre fondo oscuro */
+    text-align: center;               /* Centra el texto */
+    padding: 3.5rem 1.5rem 2.5rem;    /* Espacio interno: arriba / costados / abajo */
+
+    display: flex;                    /* FLEXBOX: ordena los hijos (iniciales, nombre, etc.) */
+    flex-direction: column;           /* Los pone uno debajo del otro */
+    align-items: center;              /* Los centra horizontalmente */
+}
+
+/* Círculo con las iniciales */
+.iniciales {
+    width: 110px;                     /* Ancho del círculo */
+    height: 110px;                    /* Alto del círculo (igual al ancho para que sea redondo) */
+    border-radius: 50%;               /* 50% convierte el cuadrado en círculo */
+    background-color: var(--rosa);    /* Fondo rosa suave */
+    color: var(--noche);              /* Color de las letras */
+    border: 4px solid var(--palo-rosa); /* Borde rosewood alrededor */
+    font-family: Georgia, serif;      /* Tipografía de las letras */
+    font-size: 2.4rem;                /* Tamaño de las letras */
+    font-weight: bold;                /* Negrita */
+
+    display: flex;                    /* FLEXBOX para centrar las letras dentro del círculo */
+    justify-content: center;          /* Centra horizontalmente */
+    align-items: center;              /* Centra verticalmente */
+    margin-bottom: 1.2rem;            /* Espacio debajo del círculo */
+}
+
+/* Nombre principal */
+#inicio h1 {
+    font-family: Georgia, "Times New Roman", serif;   /* Tipografía elegante */
+    font-size: 2.6rem;                                /* Tamaño grande */
+    line-height: 1.2;                                 /* Renglones más juntos para un título */
+}
+
+/* Frase debajo del nombre */
+.subtitulo {
+    color: var(--rosa);        /* Color rosa suave */
+    margin: 0.6rem 0 1.8rem;   /* Espacio: arriba / costados / abajo */
+    max-width: 32rem;          /* Evita que el texto sea demasiado ancho */
+}
+
+/* Menú de navegación */
+nav {
+    display: flex;             /* FLEXBOX: pone los enlaces en fila */
+    flex-wrap: wrap;           /* Si no entran, pasan al renglón siguiente (clave para el celular) */
+    justify-content: center;   /* Los centra */
+    gap: 0.6rem 1.4rem;        /* Espacio entre enlaces: vertical / horizontal */
+}
+
+nav a {
+    color: var(--crema);              /* Color del enlace */
+    text-decoration: none;            /* Quita el subrayado */
+    padding-bottom: 2px;              /* Pequeño espacio para la línea de abajo */
+    border-bottom: 2px solid transparent;  /* Línea invisible (para que aparezca al pasar el mouse) */
+}
+
+nav a:hover {
+    border-bottom-color: var(--rosa); /* Al pasar el mouse, aparece la línea rosa */
+}
+
+/* =====================================================
+   SECCIONES
+   ===================================================== */
+main {
+    max-width: 1000px;        /* El contenido nunca supera este ancho */
+    margin: 0 auto;           /* "auto" a los costados centra el contenido */
+    padding: 1rem 1.5rem;     /* Espacio interno para que no pegue a los bordes */
+}
+
+section {
+    padding: 2.5rem 0;        /* Espacio arriba y abajo de cada sección */
+}
+
+/* Tarjeta: caja blanca-rosada reutilizable (se usa con class="tarjeta") */
+.tarjeta {
+    background-color: #ffffff;               /* Fondo blanco */
+    border: 2px solid var(--rosa);           /* Borde rosa suave */
+    border-radius: 14px;                     /* Esquinas redondeadas */
+    padding: 1.5rem;                         /* Espacio interno */
+}
+
+/* =====================================================
+   PERFIL
+   ===================================================== */
+.perfil-contenedor {
+    display: flex;            /* FLEXBOX: descripción y datos quedan lado a lado */
+    gap: 1.5rem;              /* Espacio entre las dos tarjetas */
+    flex-wrap: wrap;          /* Si no hay lugar (celular), se apilan */
+}
+
+.descripcion {
+    flex: 2 1 300px;          /* Crece el doble que "datos" (2), puede achicarse (1), tamaño base 300px */
+}
+
+.datos {
+    flex: 1 1 260px;          /* Crece 1, puede achicarse 1, tamaño base 260px */
+    background-color: var(--rosa);  /* Esta tarjeta va en rosa para diferenciarla */
+    border-color: var(--rosa);      /* Borde del mismo color */
+}
+
+.datos h3 {
+    color: var(--noche);      /* Color del subtítulo "Datos personales" */
+    margin-bottom: 0.8rem;    /* Espacio debajo */
+}
+
+.datos ul {
+    list-style: none;         /* Quita las viñetas de la lista */
+}
+
+.datos li {
+    margin-bottom: 0.6rem;    /* Espacio entre cada dato */
+    overflow-wrap: anywhere;  /* Si el email es muy largo, se corta en lugar de salirse de la caja */
+}
+
+/* =====================================================
+   LÍNEA DE TIEMPO (Estudios y Experiencia)
+   ===================================================== */
+.linea-tiempo {
+    display: flex;            /* FLEXBOX */
+    flex-direction: column;   /* Elementos uno debajo del otro */
+    gap: 1.5rem;              /* Espacio entre elementos */
+}
+
+.item {
+    border-left: 4px solid var(--palo-rosa);  /* Línea vertical rosewood a la izquierda */
+    padding-left: 1.2rem;                     /* Espacio entre la línea y el texto */
+}
+
+.fecha {
+    color: var(--palo-rosa);  /* Color de las fechas */
+    font-weight: bold;        /* Negrita */
+    margin-bottom: 0.4rem;    /* Espacio debajo */
+}
+
+/* =====================================================
+   HABILIDADES
+   ===================================================== */
+.lista-habilidades {
+    list-style: none;         /* Quita las viñetas */
+    display: flex;            /* FLEXBOX: las etiquetas van en fila */
+    flex-wrap: wrap;          /* Pasan al renglón siguiente cuando no entran */
+    gap: 0.8rem;              /* Espacio entre etiquetas */
+}
+
+.lista-habilidades li {
+    background-color: var(--salvia);   /* Fondo verde salvia */
+    color: var(--noche);               /* Color del texto */
+    padding: 0.5rem 1.2rem;            /* Espacio interno: vertical / horizontal */
+    border-radius: 999px;              /* Un número muy alto hace los bordes totalmente redondos (forma de píldora) */
+    font-weight: 600;                  /* Letra semi-negrita */
+}
+
+/* =====================================================
+   CONTACTO (FOOTER)
+   ===================================================== */
+footer {
+    background-color: var(--noche);   /* Fondo azul oscuro, igual que la portada */
+    color: var(--crema);              /* Texto claro */
+    text-align: center;               /* Todo centrado */
+    padding: 3rem 1.5rem 1.5rem;      /* Espacio interno */
+    margin-top: 2rem;                 /* Separación respecto a la sección anterior */
+}
+
+footer h2 {
+    color: var(--rosa);               /* En fondo oscuro el título va rosa (se lee mejor) */
+}
+
+.botones {
+    display: flex;                    /* FLEXBOX */
+    flex-wrap: wrap;                  /* Se apilan si no entran */
+    justify-content: center;          /* Centrados */
+    gap: 1rem;                        /* Espacio entre botones */
+    margin: 1.5rem 0 2.5rem;          /* Espacio arriba / costados / abajo */
+}
+
+.boton {
+    background-color: var(--rosa);    /* Fondo rosa */
+    color: var(--noche);              /* Texto oscuro */
+    text-decoration: none;            /* Sin subrayado */
+    font-weight: bold;                /* Negrita */
+    padding: 0.7rem 1.6rem;           /* Espacio interno */
+    border-radius: 999px;             /* Bordes redondeados */
+    overflow-wrap: anywhere;          /* Evita que el email se salga de la pantalla en celulares chicos */
+}
+
+.boton:hover {
+    background-color: var(--cielo);   /* Al pasar el mouse cambia a azul grisáceo */
+}
+
+.derechos {
+    font-size: 0.85rem;               /* Letra más chica */
+    color: var(--cielo);              /* Color azul grisáceo */
+}
+
+/* =====================================================
+   RESPONSIVE (adaptación a pantallas chicas)
+   Estas reglas solo se aplican si la pantalla mide
+   600px de ancho o menos (celulares).
+   ===================================================== */
+@media (max-width: 600px) {
+
+    #inicio h1 {
+        font-size: 2rem;              /* Nombre más chico para que entre en el celular */
+    }
+
+    h2 {
+        font-size: 1.6rem;            /* Títulos de sección más chicos */
+    }
+
+    main {
+        padding: 0.5rem 1rem;         /* Menos espacio a los costados */
+    }
+
+    .tarjeta {
+        padding: 1.1rem;              /* Tarjetas con menos relleno */
+    }
+}

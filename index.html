@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!-- Le avisa al navegador que este archivo es una página web moderna (HTML5) -->
+<html lang="es">
+<!-- Abre la página. lang="es" indica que el contenido está en español -->
+
+<head>
+    <!-- HEAD: información "invisible" de la página (no se ve en pantalla) -->
+
+    <meta charset="UTF-8">
+    <!-- Permite mostrar bien tildes, ñ y símbolos -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- MUY IMPORTANTE para que sea responsive: adapta la página al ancho del celular -->
+
+    <title>Delfina Bustos Marvezy | Portfolio</title>
+    <!-- Texto que aparece en la pestaña del navegador -->
+
+    <link rel="stylesheet" href="styles.css">
+    <!-- Conecta este HTML con el archivo de estilos (CSS). Ambos deben estar en la misma carpeta -->
+</head>
+
+<body>
+    <!-- BODY: todo lo que se ve en la página -->
+
+    <!-- ================= PORTADA (HERO) ================= -->
+    <header id="inicio">
+        <!-- header = parte superior de la página. El id "inicio" sirve para identificarlo en el CSS -->
+
+        <div class="iniciales">DB</div>
+        <!-- Círculo con las iniciales (en lugar de una foto). Si más adelante querés una foto, se puede reemplazar -->
+
+        <h1>Delfina Bustos Marvezy</h1>
+        <!-- Título principal de la página: tu nombre -->
+
+        <p class="subtitulo">Estudiante de Traductorado Técnico Científico y Literario en Inglés</p>
+        <!-- Frase que te presenta profesionalmente, debajo del nombre -->
+
+        <nav>
+            <!-- nav = menú de navegación. Los enlaces te llevan a cada sección de la misma página -->
+            <a href="#perfil">Perfil</a>
+            <!-- href="#perfil" salta a la sección que tenga id="perfil" -->
+            <a href="#estudios">Estudios</a>
+            <a href="#experiencia">Experiencia</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- ================= CONTENIDO PRINCIPAL ================= -->
+    <main>
+        <!-- main = contenido central de la página, entre la portada y el pie -->
+
+        <!-- ---------- PERFIL + DATOS PERSONALES ---------- -->
+        <section id="perfil">
+            <!-- section = bloque/sección de contenido -->
+
+            <h2>Perfil</h2>
+            <!-- Título de la sección -->
+
+            <div class="perfil-contenedor">
+                <!-- Caja que agrupa descripción y datos personales; en el CSS la usamos con Flexbox para ponerlas lado a lado -->
+
+                <div class="tarjeta descripcion">
+                    <!-- Tarjeta con tu descripción. La clase "tarjeta" da el estilo de caja; "descripcion" ajusta su tamaño -->
+                    <p>Me caracterizo por ser una persona proactiva, comprometida y con una gran predisposición para aprender. Me motiva adquirir nuevos conocimientos, desarrollar mis habilidades y fomentar una comunicación clara y efectiva. Asimismo, me considero una persona decidida, con iniciativa y aspiraciones de crecimiento profesional, orientada a asumir nuevos desafíos y, en el futuro, liderar y coordinar equipos de trabajo.</p>
+                    <!-- Tu texto exacto, sin modificaciones -->
+                </div>
+
+                <div class="tarjeta datos">
+                    <!-- Tarjeta con datos personales -->
+                    <h3>Datos personales</h3>
+                    <!-- Subtítulo de la tarjeta -->
+                    <ul>
+                        <!-- ul = lista sin orden (con viñetas, que sacamos en el CSS) -->
+                        <li><strong>Fecha de nacimiento:</strong> 06/06/2006</li>
+                        <!-- li = un elemento de la lista. strong = texto en negrita -->
+                        <li><strong>Residencia:</strong> Pablo Nogués, Buenos Aires, Argentina</li>
+                        <li><strong>Email:</strong> delfinabustos42@gmail.com</li>
+                        <li><strong>Teléfono:</strong> +54 9 11 6429-2995</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ---------- ESTUDIOS ---------- -->
+        <section id="estudios">
+            <h2>Estudios</h2>
+
+            <div class="linea-tiempo">
+                <!-- Contenedor de la línea de tiempo: pone los estudios uno debajo del otro -->
+
+                <article class="item">
+                    <!-- article = un estudio. La clase "item" le da el estilo de línea de tiempo -->
+                    <h3>Traductorado Técnico Científico y Literario en Inglés</h3>
+                    <!-- Nombre de la carrera -->
+                    <p class="fecha">2024 – 2026 · Cursando tercer año</p>
+                    <!-- Período. La clase "fecha" le da un color distinto -->
+                    <p><strong>Profesorado San Agustín</strong> (agosto a diciembre de 2026)</p>
+                    <!-- Institución actual -->
+                    <p><strong>Instituto Daguerre</strong> (2024 hasta julio de 2026)</p>
+                    <!-- Institución anterior -->
+                </article>
+
+                <article class="item">
+                    <h3>Bachillerato en Ciencias Sociales</h3>
+                    <p class="fecha">2018 – 2023 · Secundario completo</p>
+                    <p><strong>Instituto Modelo del Sur</strong>, Avellaneda</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ---------- EXPERIENCIA LABORAL ---------- -->
+        <section id="experiencia">
+            <h2>Experiencia laboral</h2>
+
+            <div class="linea-tiempo">
+                <article class="item">
+                    <h3>Manicurista independiente</h3>
+                    <p class="fecha">2023 – Presente</p>
+                    <!-- Más adelante podemos sumar tareas realizadas, clientes, etc. -->
+                </article>
+            </div>
+        </section>
+
+        <!-- ---------- HABILIDADES ---------- -->
+        <section id="habilidades">
+            <h2>Habilidades</h2>
+
+            <ul class="lista-habilidades">
+                <!-- Lista de habilidades; en el CSS se muestran como "etiquetas" con Flexbox -->
+                <li>Organización</li>
+                <!-- Cada li es una etiqueta. Para agregar una habilidad, copiá una línea y cambiá el texto -->
+                <li>Puntualidad</li>
+                <li>Responsabilidad</li>
+                <li>Flexibilidad</li>
+                <li>Rápido aprendizaje</li>
+                <li>Buenas relaciones interpersonales</li>
+                <li>Comunicación</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- ================= CONTACTO (PIE DE PÁGINA) ================= -->
+    <footer id="contacto">
+        <!-- footer = parte final de la página -->
+
+        <h2>Contacto</h2>
+        <p>¿Querés ponerte en contacto conmigo?</p>
+
+        <div class="botones">
+            <!-- Caja que agrupa los botones de contacto -->
+            <a class="boton" href="mailto:delfinabustos42@gmail.com">delfinabustos42@gmail.com</a>
+            <!-- mailto: abre la aplicación de correo con mi dirección ya cargada -->
+            <a class="boton" href="tel:+5491164292995">+54 9 11 6429-2995</a>
+            <!-- tel: en un celular permite llamar con un toque -->
+        </div>
+
+        <p class="derechos">© 2026 Delfina Bustos Marvezy</p>
+        <!-- Línea final de derechos -->
+    </footer>
+
+</body>
+</html>
